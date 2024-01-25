@@ -18,6 +18,7 @@ public class Paper {
     private String content;
     private String imgName;
     private String imgUrl;
+    private String description;
     private Integer view;
     private Integer status;
 
