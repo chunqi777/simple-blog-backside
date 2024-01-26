@@ -1,5 +1,6 @@
 package com.blog.simpleblog.service;
 
+import cn.hutool.core.util.IdUtil;
 import com.blog.simpleblog.MyConfig.ExceptionEnum;
 import com.blog.simpleblog.common.ResultResponse;
 import com.blog.simpleblog.entity.Paper;
@@ -20,6 +21,8 @@ public class AdminService {
                 throw new Exception();
             }
 
+            paper.setUid(IdUtil.simpleUUID());
+
             paperMapper.insert(paper);
 
             return ResultResponse.success();
@@ -27,4 +30,6 @@ public class AdminService {
             return ResultResponse.error(ExceptionEnum.INTERNAL_SERVER_ERROR);
         }
     }
+
+
 }

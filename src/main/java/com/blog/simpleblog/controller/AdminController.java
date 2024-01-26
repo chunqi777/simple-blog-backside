@@ -5,6 +5,7 @@ import com.blog.simpleblog.entity.Paper;
 import com.blog.simpleblog.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,7 +21,7 @@ public class AdminController {
     }
 
     @PostMapping("/add")
-    public ResultResponse addPaper(Paper paper) {
+    public ResultResponse addPaper(@RequestBody Paper paper) {
         return adminService.insertOne(paper);
     }
 

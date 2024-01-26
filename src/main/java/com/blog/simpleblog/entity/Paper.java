@@ -12,6 +12,7 @@ import lombok.Data;
 public class Paper {
     @TableId(value = "id", type = IdType.AUTO)
     private String id;
+    private String uid;
     private String title;
     private String type;
     private String date;
